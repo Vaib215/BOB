@@ -76,7 +76,6 @@ elif week =="Friday":
 elif week=="Saturday":
     if hr==9:
         path= ipr
-path= 'https://cuchd.blackboard.com/ultra/courses/_51903_1/outline'
 if path:
     emai= '21BCS10561'
     pas= 'UIms@123' #input("Enter Password: ")
@@ -111,9 +110,9 @@ if path:
     link = driver.find_element_by_xpath('//*[@id="sessions-list-dropdown"]/span')
     link.click()
     openclass = driver.find_element_by_xpath('//*[@id="sessions-list"]/li/a')
-    # if(openclass.text=='Course Room'):
-    #     print("First class is Course Room. Selecting 2nd one.")
-    #     openclass=driver.find_element_by_xpath('//*[@id="sessions-list"]/li[2]/a')
+    if(openclass.text=='Course Room'):
+         print("First class is Course Room. Selecting 2nd one.")
+         openclass=driver.find_element_by_xpath('//*[@id="sessions-list"]/li[2]/a')
     openclass.click()
     time.sleep(5)
     print("Class Started")
